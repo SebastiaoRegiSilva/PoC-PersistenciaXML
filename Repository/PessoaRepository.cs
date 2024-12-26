@@ -7,17 +7,25 @@ public class PessoaRepository
     public PessoaRepository()
     {
         if (!File.Exists(_caminhoArquivo))
-        {
-            Salvar(new List<PessoaModel>()); // Cria o arquivo inicial vazio
-        }
+            Salvar(new List<PessoaModel>()); // Cria o arquivo inicial vazio.
     }
 
     public List<PessoaModel> ObterTodos()
     {
+        if (!File.Exists(_caminhoArquivo))
+            return new List<PessoaModel>();
+
         var serializer = new XmlSerializer(typeof(List<PessoaModel>));
-        using (var stream = new FileStream(_caminhoArquivo, FileMode.Open))
+        try
         {
-            return (List<PessoaModel>)serializer.Deserialize(stream); // BUG NA EXECUÇÃO. 
+            using (var stream = new FileStream(_caminhoArquivo, FileMode.Open))
+                return (List<PessoaModel>)serializer.Deserialize(stream);
+            
+        }
+        catch
+        {
+            // Retorna uma lista vazia em caso de erro na desserialização.1
+            return new List<PessoaModel>();
         }
     }
 
