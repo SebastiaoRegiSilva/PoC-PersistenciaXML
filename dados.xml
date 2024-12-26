@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPessoaModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PessoaModel>
+    <Id>1</Id>
+    <Nome>Jonh</Nome>
+    <Idade>5</Idade>
+  </PessoaModel>
+  <PessoaModel>
+    <Id>2</Id>
+    <Nome>Cesar</Nome>
+    <Idade>10</Idade>
+  </PessoaModel>
+  <PessoaModel>
+    <Id>3</Id>
+    <Nome>Orochi</Nome>
+    <Idade>30</Idade>
+  </PessoaModel>
+  <PessoaModel>
+    <Id>4</Id>
+    <Nome>Rihanna</Nome>
+    <Idade>50</Idade>
+  </PessoaModel>
+</ArrayOfPessoaModel>
